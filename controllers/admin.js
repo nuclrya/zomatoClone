@@ -2,7 +2,7 @@ const Restaurant = require('../models/res');
 
 
 exports.getAddRestaurant = (req, res, next) => {
-    res.render('owner/new-res', {
+    res.render('admin/restaurantForm', {
         pageTitle: 'Add Restaurant'
       });
 }
@@ -10,7 +10,7 @@ exports.getAddRestaurant = (req, res, next) => {
 
 exports.postAddRestaurant = (req, res, next) => {
     const name = req.body.name;
-    const imageUrl = req.body.imageUrl;
+    const imageUrl = req.file;
     const cuisine = req.body.cuisine;
     const restaurant = new Restaurant({
         name: name,
