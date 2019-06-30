@@ -25,7 +25,9 @@ body{
 }
 .form-background .container input[type="submit"],
 .form-background .container input[type="text"],
-.form-background .container input[type="password"]{
+.form-background .container input[type="password"],
+.form-background .container input[type="file"]
+    {
     padding: 10px 10px;
     margin: 15px 0 15px 0; 
     width: 100%;
@@ -58,6 +60,8 @@ body{
     margin: 20px 0 15px 0; 
     text-transform: uppercase;
 }
+
+
 form div{
     position: relative;
 }
@@ -77,6 +81,10 @@ form div label{
     color: #d62828;
     font-size: 12px;
     font-weight: bold;
+}
+.form-background .container .file label{
+    top: 0px;
+    font-size: 12px;
 }
 
 .form-background  a{

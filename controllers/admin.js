@@ -10,8 +10,9 @@ exports.getAddRestaurant = (req, res, next) => {
 
 exports.postAddRestaurant = (req, res, next) => {
     const name = req.body.name;
-    const imageUrl = req.file;
+    const image = req.file;
     const cuisine = req.body.cuisine;
+    const imageUrl = "images/" + image.filename;
     const restaurant = new Restaurant({
         name: name,
         imageUrl: imageUrl,
@@ -20,7 +21,6 @@ exports.postAddRestaurant = (req, res, next) => {
     restaurant
         .save()
         .then(result => {
-          console.log('Created Product');
           res.redirect('/restaurants');
         })
         .catch(err => {

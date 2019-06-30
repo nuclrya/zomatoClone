@@ -18,7 +18,7 @@ const fileStorage = multer.diskStorage({
     cb(null, 'images');
   },
   filename: (req, file, cb) => {
-    cb(null, new Date().toISOString() + '-' + file.originalname);
+    cb(null, new Date().toISOString().replace(/:/g, '-') + '-' + file.originalname);
   }
 }); 
 const fileFilter = (req, file, cb) => {
@@ -36,10 +36,10 @@ const fileFilter = (req, file, cb) => {
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(
-  multer({ storage: fileStorage, fileFilter: fileFilter }).single('image')
+  multer({ storage: fileStorage ,fileFilter: fileFilter}).single('image')
 );
 app.use(express.static(path.join(__dirname,'public')));
-app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use("/images", express.static(path.join(__dirname, 'images')));
 
 app.use((req, res, next) => {
     User.findById('5cf73a343c070116f42d97dc')
