@@ -1,0 +1,39 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/restaurants.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+        <main>
+            <% if (prods.length > 0) { %>
+                <div class="res_list">
+                    <h1>Restaurants Near</h1>
+                    <div class="card_collection">
+                        <div class="row">
+                            <% for (let product of prods) { %>
+                            <div class="card">
+                                <div class="image" style="background-image: url('<%= product.imageUrl %>')"></div>
+                                <div class="content">
+                                    <a id="res_name" href="/"><%= product.name %></a>
+                                    <ul>
+                                    <li> <p><%= product.cuisine %></p></li> 
+                                    <li><p>Costs ₹150 for two</p></li>
+                                    <li><p>Up to 25min </p></li>
+                                    <li> <p>Accepts cash & online payments</p></li>
+                                    </ul>
+                                </div>
+                                <p id="rating"> <i class="fa fa-star"></i> 4.2</p>
+                                <a id ="order_button" onClick = "addToCart()" href="/restaurants/<%= product._id %>">Order Now</a>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>    
+                </div>
+                <% } else { %>
+                    <h1>No Products Found!</h1>
+                    <% } %>
+        </main>
+        
+
+        <%- include('../includes/end.ejs') %>

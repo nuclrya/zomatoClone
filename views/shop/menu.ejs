@@ -1,0 +1,262 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/menu.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <div class="container">
+        <div class="hero">
+            <div class="img" style="background-image: url( '<%= restaurant.imageUrl %>' )"></div>
+            <div class="title_name">
+                <h1><%= restaurant.name %></h1>
+                <h3 class="light">Metro Pillar 782, Uttam Nagar
+                </h3>
+                <h3 class="light"><%= restaurant.cuisine %></h3>
+                <div class="table">
+                    <div class="col">
+                        <h3> <i class="fa fa-star"></i> 3.8 </h3>
+                        <h6 class="light">1000+ Ratings</h6>
+                    </div>
+                    <div class="col">
+                        <h3>27 mins</h3>
+                        <h6 class="light">Delivery Time</h6>
+                    </div>
+                    <div class="col">
+                        <h3>₹ 250</h3>
+                        <h6 class="light">Cost for two</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <a href="#recom">Recommended</a>
+            <a href="#thali">Thalis</a>
+            <a href="#meal">Meals</a>
+            <a href="#main">Main Course</a>
+            <a href="bev">Beverages</a>
+            <a href="#break">Breakfast Combos</a>
+        </div>
+        <div class="content">
+        <div class="menu_items">
+            <div class="item_category">
+                <h3 id="recom">Recommended</h3>
+                <div class="item">
+                    <div class="info">
+                        <div class="veg_icon"></div>
+                        <h3>Dal Makhani with Chawal</h3>
+                        <h4 class="light">₹105.00</h4>
+                    </div>
+                    <div class="but">
+                    <a  class="button" onClick="addToCart(this)">Add</a>
+                </div>
+                </div>
+
+                <div class="item">
+                        <div class="info">
+                            <div class="veg_icon"></div>
+                            <h3>Butter Naan Thali(Deluxe)</h3>
+                            <h4 class="light">₹210.00</h4>
+                        </div>
+                        <div class="but">
+                        <a class="button" onClick="addToCart(this)">Add</a>
+                    </div>
+                    </div>
+                    <div class="item">
+                            <div class="info">
+                                <div class="nveg_icon"></div>
+                                <h3>Chicken Sweet corn Soup</h3>
+                                <h4 class="light">₹125.00</h4>
+                            </div>
+                            <div class="but">
+                            <a class="button" onclick="addToCart()">Add</a>
+                        </div>
+                        </div>
+                        <div class="item">
+                            <div class="info">
+                                <div class="veg_icon"></div>
+                                <h3>Malai Paneer Tikka</h3>
+                                <h4 class="light">₹230.00</h4>
+                            </div>
+                            <div class="but">
+                            <a class="button" onClick="addToCart(this)">Add</a>
+                        </div>
+                        </div>
+                        <div class="item">
+                            <div class="info">
+                                <div class="veg_icon"></div>
+                                <h3>Paneer Lababdar</h3>
+                                <h4 class="light">₹240.00</h4>
+                            </div>
+                            <div class="but">
+                            <a class="button" onClick="addToCart(this)">Add</a>
+                        </div>
+                        </div>
+                        <div class="item">
+                            <div class="info">
+                                <div class="nveg_icon"></div>
+                                <h3>Butter Chicken</h3>
+                                <h4 class="light">₹330.00</h4>
+                            </div>
+                            <div class="but">
+                            <a class="button" onClick="addToCart(this)">Add</a>
+                        </div>
+                        </div>
+            </div>
+            <div id="thali" class="item_category">
+                <h3>Thali</h3>
+                <div class="item">
+                    <div class="info">
+                        <div class="veg_icon"></div>
+                        <h3>Bread Thali</h3>
+                        <h4 class="light">₹185.00</h4>
+                    </div>
+                    <div class="but">
+                    <a class="button" onClick="addToCart(this)">Add</a>
+                </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div class="veg_icon"></div>
+                        <h3>Butter Naan</h3>
+                        <h4 class="light">₹215.00</h4>
+                    </div>
+                    <div class="but">
+                    <a class="button" onClick="addToCart(this)">Add</a>
+                </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div class="veg_icon"></div>
+                        <h3>Aloo Paratha</h3>
+                        <h4 class="light">₹215.00</h4>
+                    </div>
+                    <div class="but">
+                    <a class="button" onClick="addToCart(this)">Add</a>
+                </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div class="veg_icon"></div>
+                        <h3>Laccha Paratha</h3>
+                        <h4 class="light">₹215.00</h4>
+                    </div>
+                    <div class="but">
+                    <a class="button" onClick="addToCart(this)">Add</a>
+                </div>
+                </div>
+            </div>
+            <div id="meal" class="item_category">
+                    <h3>Thali</h3>
+                    <div class="item">
+                        <div class="info">
+                            <div class="veg_icon"></div>
+                            <h3>Dal Makhani with Chawal</h3>
+                            <h4 class="light">₹105.00</h4>
+                        </div>
+                        <div class="but">
+                        <a class="button" onClick="addToCart(this)">Add</a>
+                    </div>
+                    </div>
+                    </div>
+                    <div id="main"class="item_category">
+                        <h3>Thali</h3>
+                        <div class="item">
+                            <div class="info">
+                                <div class="veg_icon"></div>
+                                <h3>Dal Makhani with Chawal</h3>
+                                <h4 class="light">₹105.00</h4>
+                            </div>
+                            <div class="but">
+                            <a class="button" onClick="addToCart(this)">Add</a>
+                        </div>
+                        </div>
+                        </div>
+                        <div id="bev"class="item_category">
+                            <h3>Thali</h3>
+                            <div class="item">
+                                <div class="info">
+                                    <div class="veg_icon"></div>
+                                    <h3>Dal Makhani with Chawal</h3>
+                                    <h4 class="light">₹105.00</h4>
+                                </div>
+                                <div class="but">
+                                <a class="button" onClick="addToCart(this)">Add</a>
+                            </div>
+                            </div>
+                            </div>
+                            <div id ="break" class="item_category">
+                                <h3>Thali</h3>
+                                <div class="item">
+                                    <div class="info">
+                                        <div class="veg_icon"></div>
+                                        <h3>Dal Makhani with Chawal</h3>
+                                        <h4 class="light">₹105.00</h4>
+                                    </div>
+                                    <div class="but">
+                                    <a class="button" onClick="addToCart(this)">Add</a>
+                                </div>
+                                </div>
+                                </div>
+        </div>
+        <div class="cart">
+            <h2>Cart Empty</h2>
+            <p class="quote">Good food is always cooking! Go ahead, order some yummy items from the menu.</p>
+            
+        </div>
+    </div>
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+
+<script>
+    //on click add
+//add food to cart
+//change total
+//on submit display modal
+
+var ctr = 0;
+var total = 0;
+var name="";
+var price= 0;
+var array = [];
+
+$('.item_category .item .but .button').click(function() {
+    if(ctr === 0){
+        $('.cart *').remove();
+        $(".cart").css({
+            'background': '#e7e7e7'
+        });
+        name = $(this).parent().parent().find(".info h3").text();
+        price = $(this).parent().parent().find(".info h4").text();
+        total = Number(price.slice(1));
+        $('.cart').html("<div class='checkout'><h2>Cart</h2><div class='pick'><p id='name'>"+name+"</p><p id='rate'>"+price+"</p></div><p class='total'> Total</p><p class='total rate' style='margin-left:150px;font-size:25px'> "+total+"</p></div>")
+        ctr++;
+        array.push({
+            name: name,
+            price: total
+        })
+    }
+    else if(ctr===7){
+        
+    }
+    else{
+        name = $(this).parent().parent().find(".info h3").text();
+        price = $(this).parent().parent().find(".info h4").text();
+        total += Number(price.slice(1));
+        $('.cart .checkout').append("<div class='pick'><p id='name'>"+name+"</p><p id='rate'>"+price+"</p></div>");
+        $(".cart .checkout .rate").text(total+".00"); 
+        array.push({
+            name: name,
+            price: Number(price.slice(1))
+        })
+    }
+    ctr++;
+})
+
+</script>
+<script src="/js/menu.js"></script>
+
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,30 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <div class="form-background">
+            <h2 class="active">Add Restaurant</h2>
+            <div class="container">           
+                <form action="/add-restaurant" method="POST">
+                    <div>
+                        <input type="text" name="name" required>
+                        <label> Name </label>
+                    </div>
+                    <div>
+                        <input type="text" name="cuisine" required>
+                        <label> cuisine </label>
+                    </div>
+                    <div>
+                        <input type="text" name="imageUrl" required>
+                        <label> imageUrl </label>
+                    </div>
+                    
+                    <input type="submit">
+                    
+                </form>
+            </div>
+        </div>
+     <%- include('../includes/end.ejs') %>
