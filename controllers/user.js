@@ -9,7 +9,6 @@ exports.getLanding = (req, res, next) => {
 exports.getRestaurants = (req, res, next) => {
     Restaurant.find()
     .then(result => {
-      console.log(result);
       res.render('restaurant/res-list', {
         prods: result,
         pageTitle: 'All Restaurants',

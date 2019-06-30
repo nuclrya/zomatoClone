@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const resSchema = new Schema ({
+  name: String,
+  email: String,
   cart: {
     items: [
       {
@@ -12,4 +14,4 @@ const resSchema = new Schema ({
   }
 })
 
-module.exports = mongoose.model('Restaurant',resSchema);
+module.exports = mongoose.model('User',resSchema);
