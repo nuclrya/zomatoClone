@@ -232,7 +232,7 @@ $('.item_category .item .but .button').click(function() {
         name = $(this).parent().parent().find(".info h3").text();
         price = $(this).parent().parent().find(".info h4").text();
         total = Number(price.slice(1));
-        $('.cart').html("<div class='checkout'><h2>Cart</h2><div class='pick'><p id='name'>"+name+"</p><p id='rate'>"+price+"</p></div><p class='total'> Total</p><p class='total rate' style='margin-left:150px;font-size:25px'> "+total+"</p></div>")
+        $('.cart').html("<div class='checkout'><h2>Cart</h2><div class='pick'><p id='name'>"+name+"</p><p id='rate'>"+price+"</p></div><p class='total'> Total</p><p class='total rate' style='margin-left:150px;font-size:25px'> "+total+"</p><button class='save' onClick='sendData()'>Save Changes</button></div>")
         ctr++;
         array.push({
             name: name,

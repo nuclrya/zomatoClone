@@ -25,8 +25,18 @@ exports.getRestaurant = (req, res, next) => {
       .then(restaurant => {
         res.render('user/menu', {
           restaurant: restaurant,
-          pageTitle: restaurant.title
+          pageTitle: restaurant.name
         });
       })
       .catch(err => console.log(err));
   };
+
+exports.postCart = (req, res, next) => {
+    const cart  = req.body.item.item;
+    req.user.addToCart(cart)
+      .then(result => {
+        res.status(200).json({
+          message: "success"
+        })
+      });
+}

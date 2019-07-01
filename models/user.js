@@ -1,17 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const resSchema = new Schema ({
+const userSchema = new Schema ({
   name: String,
   email: String,
   cart: {
     items: [
       {
-        name: { type: String , required: true },
-        quantity: { type: Number, required: true }
+        name: String,
+        quantity: Number
       }
     ]
   }
 })
 
-module.exports = mongoose.model('User',resSchema);
+userSchema.methods.addToCart = function(cart) {
+  this.cart.items = cart;
+  return this.save()
+};
+
+module.exports = mongoose.model('User',userSchema);

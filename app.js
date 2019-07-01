@@ -40,9 +40,10 @@ app.use(
 );
 app.use(express.static(path.join(__dirname,'public')));
 app.use("/images", express.static(path.join(__dirname, 'images')));
+app.use("/restaurants/images", express.static(path.join(__dirname, 'images')));
 
 app.use((req, res, next) => {
-    User.findById('5cf73a343c070116f42d97dc')
+    User.findById('5d19f99870e09c1348c8d84f')
       .then(user => {
         req.user = user;
         next();
