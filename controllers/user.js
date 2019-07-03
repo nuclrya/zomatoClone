@@ -32,7 +32,7 @@ exports.getRestaurant = (req, res, next) => {
   };
 
 exports.postCart = (req, res, next) => {
-    const cart  = req.body.item.item;
+    const cart  = req.body.item;
     req.user.addToCart(cart)
       .then(result => {
         res.status(200).json({

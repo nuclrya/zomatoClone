@@ -86,6 +86,9 @@ nav ul li a:hover{
     display: flex;
     justify-content: space-between
 }
+.cartDown .cartDetail .items .item .name{
+    width: 200px;
+}
 
 
 .cartDown .cartDetail .total{

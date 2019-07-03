@@ -8,14 +8,20 @@ const userSchema = new Schema ({
     items: [
       {
         name: String,
-        quantity: Number
+        quantity: Number,
+        rate: Number
       }
-    ]
+    ],
+    resID: {
+      type: Schema.Types.ObjectId,
+      ref: 'Restaurant'
+    },
+    total: Number
   }
 })
 
 userSchema.methods.addToCart = function(cart) {
-  this.cart.items = cart;
+  this.cart = cart;
   return this.save()
 };
 

@@ -175,7 +175,7 @@ h1,h2,h3,h4,h5,h6{
     letter-spacing: 0px;
     color: #333;
 }
- .menu_items .item a{
+ .menu_items .item a[class= "button"]{
     border: 1px solid #099E44;
     color: #099E44;
     display: inline-block;
@@ -183,7 +183,8 @@ h1,h2,h3,h4,h5,h6{
     padding: 7px;
     margin-top: 15px; 
     border-radius: 5px;
-    text-align: center
+    text-align: center;
+    cursor: pointer;
 }
  .menu_items .item a:hover{
     background: #ddd;
@@ -212,7 +213,7 @@ h1,h2,h3,h4,h5,h6{
 .cart{
     height: 100vh;
     width: 21vw;
-    background: url('cart_empty.webp');
+    background: url('/img/cart_empty.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -251,7 +252,7 @@ h1,h2,h3,h4,h5,h6{
 .cart .checkout .items .item #rate{
     margin-top: 23px;
 }
-.cart .checkout .item .counter{
+.counter{
     margin-right: 20px;
     margin-top: 20px;
     border: 1px solid #099E44;
@@ -260,12 +261,14 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     box-sizing: border-box;
 }
-.cart .checkout .item .counter *{
+.counter *,
+.menu_items .item_category .item .but .counter *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.cart .checkout .item .counter .count{
+.counter .count,
+.menu_items .item_category .item .but .counter .count{
     display: inline-block;
     width: 33%;
     height: 25px;
@@ -276,13 +279,16 @@ h1,h2,h3,h4,h5,h6{
     box-sizing: border-box;
     margin-top: -1px
 }
-.cart .checkout .item .counter a{
+.counter a,
+.menu_items .item_category .item .but .counter a{
     display: inline-block;
     width: 33%;
     text-align: center;
+    border-radius: none;
     cursor: pointer;
 }
-.cart .checkout .item .counter a i{
+.counter a i,
+.menu_items .item_category .item .but .counter a i{
     font-size: 13px;
     color: #099E44;
     line-height: 1.8;

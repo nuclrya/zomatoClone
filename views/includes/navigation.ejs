@@ -11,31 +11,25 @@
             <div class="cartDown">
                 <div class="square"></div>
                 <div class="resDetail">
-                    <img src="./hero.jpg" alt="">
+                    <img src="/<%= resID.imageUrl %>" alt="">
                     <div class="info">
-                        <h3>FingerLickerz</h3>
-                        <h5>Dwarka 2</h5>
-                        <a href="">View Full Menu</a>
+                        <h3><%= resID.name %></h3>
+                        <h5><%= resID.cuisine %></h5>
+                        <a href="/restaurants/<%= resID._id %>">View Full Menu</a>
                     </div>
                 </div>
                 <div class="cartDetail">
                     <div class="items">
+                        <% for( let item of cart.items ) {%>
                         <div class="item">
-                            <p class="name">Masala Vada Pav</p>
-                            <p class="rate">₹70</p>
+                            <p class="name"><%= item.name %></p><p class="quantity"> x <%= item.quantity %></p>
+                            <p class="rate">₹<%= item.rate *  item.quantity%></p>
                         </div>
-                        <div class="item">
-                                <p class="name">Masala Vada Pav</p>
-                                <p class="rate">₹70</p>
-                            </div>
-                            <div class="item">
-                                    <p class="name">Masala Vada Pav</p>
-                                    <p class="rate">₹70</p>
-                                </div>
+                        <% } %>
                     </div>
                     <div class="total">
                         <h2 class="subtotal">Subtotal</h2>
-                        <h2 class="net">₹78</h2>
+                        <h2 class="net">₹<%= cart.total %></h2>
                     </div>
                 </div>
                 <button>Checkout</button>

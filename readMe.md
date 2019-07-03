@@ -1,7 +1,5 @@
-# Task to be completed - UI IMPROVEMENT
+# Task to be completed - Cart ui connection
 
-1. Tab icon  /
-2. restaurants flexbox  /
-3. adding cart menu /
-4. fixing menu page /
-5. pagination
+1. send data in organised format
+2. add data to cart
+3. add ui to backend

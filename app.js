@@ -51,6 +51,19 @@ app.use((req, res, next) => {
       .catch(err => console.log(err));
   });
 
+  app.use((req, res, next) => {
+    res.locals.cart = req.user.cart;
+    res.locals.resID = false;
+    req.user
+      .populate('cart.resID')
+      .execPopulate()
+      .then(result => {
+        res.locals.resID = result.cart.resID;
+      }).then(() => {
+          next();
+      })
+  })
+
 app.use(userRoutes);  
 app.use(adminRoutes);
 
@@ -76,3 +89,21 @@ mongoose.connect('mongodb+srv://nucleya:sbbc6NGFsLlQUMUS@cluster0-xvb8k.mongodb.
         console.log(err);
     })
 
+
+
+    // exports.getCart = (req, res, next) => {
+    //   req.user
+    //     .populate('cart.items.productId')
+    //     .execPopulate()
+    //     .then(user => {
+    //       const products = user.cart.items;
+    //       res.render('shop/cart', {
+    //         path: '/cart',
+    //         pageTitle: 'Your Cart',
+    //         products: products
+    //       });
+    //     })
+    //     .catch(err => console.log(err));
+    // };
+    
+    
