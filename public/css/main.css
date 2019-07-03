@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 body{
     margin: 0;
     padding: 0;
@@ -42,6 +44,103 @@ nav ul a{
 
 nav ul li a:hover{
     background: rgb(168, 31, 31);
+}
+.dropdown{
+    min-height: 70px;
+    z-index: 100;
+    width: 145px;
+}
+.cartDown .resDetail{
+    border: 1px solid #e7e7e7;
+    border-right: none;
+    border-left: none;
+    display: flex;
+    padding: 10px;
+}
+.cartDown  .resDetail img{
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    border-radius: 50%;
+}
+.cartDown  .resDetail .info{
+    margin-top: 20px;
+}
+
+.cartDown  .resDetail .info a{
+    height: 25px;
+    line-height: 1.8;
+    font-size: 14px;
+    margin-top: 5px
+}
+.cartDown  .resDetail h3,h5{
+    margin: 2px;
+}
+.cartDown .cartDetail .items {
+    border: 1px solid #e7e7e7;
+    border-right: none;
+    border-left: none;
+
+}
+.cartDown .cartDetail .items .item{
+    display: flex;
+    justify-content: space-between
+}
+
+
+.cartDown .cartDetail .total{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px
+}
+
+
+.cartDown button{
+    width: 100%;
+    background: #099E44;
+    height: 40px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.dropdown .square{
+    height: 10px;
+    width: 10px;
+    background: #fff;
+    position: absolute;
+    top: -11px;
+    border: 5px solid #cb202d;
+    border-bottom: 0;
+    border-right: 0;
+    left: 20%;
+    transform: rotateZ(45deg);
+
+}
+.dropdown:hover > .cartDown{
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown .cartDown:hover{
+    visibility: visible;
+    opacity: 1;
+}
+
+.cartDown{
+    font-family: 'Montserrat', sans-serif;
+    border-top: 5px solid #cb202d;
+    margin-top: 10px;
+    z-index: 100;
+    background: #f7f7f7;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 2px 20px 0 #000;
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.2s linear;
 }
 
 .flash p{

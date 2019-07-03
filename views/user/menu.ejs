@@ -237,7 +237,7 @@
             s = price.search("₹");
             total = Number(price.slice(s+1));
             ctr++;
-    $('.cart').html("<div class='checkout'><h2>Cart</h2><div class='items'><div class='item'><p id='name'>"+name+"</p><div class='counter'><a><i class='fa fa-plus' aria-hidden='true'></i></a><p class='count'>"+ quantity +"</p><a><i class='fa fa-minus' aria-hidden='true'></i></a></div> <p id='rate'>"+price+"</p></div></div><div class='total'><div><p class='subtotal'> Subtotal</p><p class='net'>₹" + total + "</p></div><button>Checkout</button></div></div>")
+    $('.cart').html("<div class='checkout'><h2>Cart</h2><div class='items'><div class='item'><p id='name'>"+name+"</p><div class='counter'><a><i class='fa fa-plus' aria-hidden='true'></i></a><p class='count'>"+ quantity +"</p><a><i class='fa fa-minus' aria-hidden='true'></i></a></div> <p id='rate'>"+price+"</p></div></div><div class='total'><div><p class='subtotal'> Subtotal</p><p class='net'>₹" + total + "</p></div><button>Add to Cart</button></div></div>")
         }
         else{
             name = $(this).parent().parent().find(".info h3").text();

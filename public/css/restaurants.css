@@ -1,35 +1,65 @@
-.res_list .card{
+.res_list{
+    margin: 50px;
+    margin-top: 80px;
+    /* box-sizing: border-box; */
+    /* width: 100vw; */
+}
+.res_list h1{
+    color: #cb202d;
+    font-size: 30px;
+}
+
+.cardList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 10pc 0 10pc;
+}
+
+
+.cardList h1{
+    color: #ba1e2b;
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+.cardList .card{
+    /* margin: 20px; */
+}
+
+.cardList .card{
     position: relative;
     font-weight:100; 
     height: 480px;
-    width: 22vw;
-    margin: 5px;
+    width: 300px;
+    margin: 10px;
     border-radius: 0.4rem;
     box-shadow: 0px 2px 3px 0px rgba(111,111,111,0.39);
 }
 
-.res_list .card:hover{
+.cardList .card:hover{
     box-shadow: 2px 5px 5px 2px rgba(111,111,111,0.39);
 
 }
 
-.res_list .card .image {
+.cardList .card .image {
     border-radius: 0.4rem 0.4rem 0 0 ;
     height: 250px;
     width: 100%;
     background-image: url("https://b.zmtcdn.com/data/pictures/6/18680756/3eb4b66be01db702b3dc43466cdc4ee1_o2_featured_v2.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     margin-bottom: 25px
 }
 
-.res_list .content ul li{
+.cardList .card ul li{
     /* padding: 15px; */
     line-height: 0.5;
     color: #333;
     list-style: square
 }
-.content #res_name{
+.card #name{
     text-align: center;
     display: inline-block;
     font-size: 25px;
@@ -39,7 +69,7 @@
     text-decoration: none;
 }
 
-.content #res_name:hover{
+.card #name:hover{
     text-decoration: underline;
     color: #ba1e2b;
 }
@@ -77,24 +107,3 @@
     color: white;
 }
 
-.res_list{
-    margin: 50px;
-    margin-top: 80px;
-    /* box-sizing: border-box; */
-    /* width: 100vw; */
-}
-.res_list .card_collection .row{
-    /* width: 80vw; */
-    position: relative;
-    margin-left: 160px;
-    display: flex
-}
-.res_list h1{
-    color: #ba1e2b;
-    text-align: center;
-    font-weight: 100;
-    letter-spacing: 2px;
-}
-.res_list .card{
-    margin: 20px;
-}
