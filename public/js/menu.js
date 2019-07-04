@@ -8,6 +8,9 @@ let s;
         items: [],
         total: 0
     }
+var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+
+console.log(token)
 
 $('.item_category .item .but .button').click(function() {
     if(ctr === 0){
@@ -67,14 +70,16 @@ $('.item_category .item .but .button').click(function() {
 
         fetch("/cart", {
                 method: 'POST',
-                headers: {
+                credentials: 'same-origin',
+                headers: { 
+                    'csrf-token': token,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(todo)
         })
         .then( (result) => result.json)
         .then(data => {
-            window.location.assign('/restaurants')
+            // window.location.assign('/restaurants')
         })
     }
     function incrementQuantity(ele, x) {

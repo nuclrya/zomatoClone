@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema ({
+  password: String,
+  resetToken: String,
   name: String,
+  resetTokenExpiration: Date,
   email: String,
   cart: {
     items: [

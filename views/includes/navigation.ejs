@@ -4,10 +4,16 @@
 <nav>
     <a href="/"><img src="https://b.zmtcdn.com/images/zomato_white_logo_new.svg" alt="zomato"></a>
     <ul>
+        <% if( !isLoggedIn ){ %>
+            <li class="high"> <a href="/login">Login</a> </li>
+            <li class="high"> <a href="/signin">SignUp </a></li>
+        <% } else { %>
         <li class ="high"><a href="/restaurants">View</a></li>
         <li class ="high"><a href="/add-restaurant">Add</a></li>
+        <li class ="high"><a href="/logout">LogOut</a></li>
         <div class="dropdown">
             <li class ="high"><a>Cart</a></li>
+            <% if( resID ) { %>
             <div class="cartDown">
                 <div class="square"></div>
                 <div class="resDetail">
@@ -34,7 +40,9 @@
                 </div>
                 <button>Checkout</button>
             </div>
+            <% } %>
         </div>
+        <% } %>
         
     </ul>
 </nav>

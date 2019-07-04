@@ -1,7 +1,7 @@
 const Restaurant = require('../models/res');
 
 exports.getLanding = (req, res, next) => {
-    res.render('user/home',{
+      res.render('user/home',{
         pageTitle: 'Zomato'
     })
 }
@@ -25,7 +25,8 @@ exports.getRestaurant = (req, res, next) => {
       .then(restaurant => {
         res.render('user/menu', {
           restaurant: restaurant,
-          pageTitle: restaurant.name
+          pageTitle: restaurant.name,
+          csrfToken: req.csrfToken()
         });
       })
       .catch(err => console.log(err));
