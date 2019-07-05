@@ -68,27 +68,34 @@ app.use(csrfProtection);
 app.use(flash());
 
 app.use((req, res, next) => {
-  res.locals.isLoggedIn = req.session.isLoggedIn;
-  res.locals.csrfToken =  req.csrfToken();
-  res.locals.user = 
-  if( req.user ){
-  res.locals.cart = req.user.cart;
-  // res.locals.resID = false;
-  // if( req.user.cart )
-  req.user
-    .populate('cart.resID')
-    .execPopulate()
-    .then(result => {
-      res.locals.resID = result.cart.resID;
-    }).then(() => {
-        next();
-    })
-  }
-  else{ 
+  if (!req.session.user) {
     res.locals.resID = false;
-    next()
+    return next();
   }
-})
+  User.findById(req.session.user._id)
+    .then(user => {
+      req.user = user;
+      res.locals.cart = req.user.cart;
+      req.user
+        .populate('cart.resID')
+        .execPopulate()
+        .then(result => {
+          res.locals.resID = result.cart.resID;
+        })
+        .then(() => {
+          next();
+        })
+      })
+    .catch(err => console.log(err));
+  }
+);
+
+app.use((req, res, next) => {
+    res.locals.isLoggedIn = req.session.isLoggedIn;
+    res.locals.csrfToken =  req.csrfToken();
+    next();
+  }
+)
 
 app.use(authRoutes);
 app.use(userRoutes);  

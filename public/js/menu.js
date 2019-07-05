@@ -9,10 +9,11 @@ let s;
         total: 0
     }
 var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+var isLoggedIn = document.querySelector('meta[name="isLoggedIn"]').getAttribute('content')
 
-console.log(token)
 
 $('.item_category .item .but .button').click(function() {
+    if( isLoggedIn ) {
     if(ctr === 0){
         $('.cart *').remove();
         $(".cart").css({
@@ -49,6 +50,15 @@ $('.item_category .item .but .button').click(function() {
 
 
     }
+}
+else {
+    $("li[class='high'] a[href='/login']").parent().addClass('attention')
+    setTimeout(
+        function() 
+        {
+            $(".attention").removeClass("attention")       
+         }, 750 );
+}
 })
 
 
@@ -79,7 +89,7 @@ $('.item_category .item .but .button').click(function() {
         })
         .then( (result) => result.json)
         .then(data => {
-            // window.location.assign('/restaurants')
+            window.location.assign('/restaurants')
         })
     }
     function incrementQuantity(ele, x) {
